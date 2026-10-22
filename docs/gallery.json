@@ -1,0 +1,24 @@
+[
+  {
+    "id": "oerch-owl",
+    "title": "The Look",
+    "subtitle": "Oerch owl · glasses down, eyes on you",
+    "category": "Loader",
+    "creator": "Original showcase",
+    "media": "./media/oerch-owl.mp4",
+    "poster": "./media/owl-poster.svg",
+    "description": "A curious owl lowers its oversized glasses, scans the room, and floats in a subtle loop. Made for an expressive website loading screen.",
+    "featured": true
+  },
+  {
+    "id": "robot-study",
+    "title": "Curious Circuit",
+    "subtitle": "Robot character · eyes, antenna and expression",
+    "category": "Mascot",
+    "creator": "Skill example",
+    "media": "./media/robot-demo.mp4",
+    "poster": "./media/robot-poster.svg",
+    "description": "An original robot example included with Mascot Motion Director. A small study in secondary action, anticipation, timing and personality.",
+    "featured": false
+  }
+]
