@@ -17,6 +17,28 @@ function safeLink(raw) {
     return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
   } catch { return ''; }
 }
+
+// The gallery also supports base64-packed MP4s for hosts where text-only uploads are
+// available. Decoding occurs once per animation; video elements receive normal MP4 blobs.
+const packedVideoCache = new Map();
+function resolveMedia(raw) {
+  const url = safeLink(raw);
+  if (!url) return Promise.reject(new Error('Invalid media URL'));
+  if (!url.split('?')[0].endsWith('.mp4.b64')) return Promise.resolve(url);
+  if (!packedVideoCache.has(url)) {
+    const promise = fetch(url)
+      .then(resp => { if (!resp.ok) throw new Error('Media file unavailable'); return resp.text(); })
+      .then(encoded => {
+        const decoded = atob(encoded.trim());
+        const bytes = new Uint8Array(decoded.length);
+        for (let i = 0; i < decoded.length; i++) bytes[i] = decoded.charCodeAt(i);
+        return URL.createObjectURL(new Blob([bytes], { type: 'video/mp4' }));
+      });
+    packedVideoCache.set(url, promise);
+  }
+  return packedVideoCache.get(url);
+}
+
 function node(tag, cls, text) {
   const el = document.createElement(tag);
   if (cls) el.className = cls;
@@ -34,9 +56,19 @@ function makeVideo(item, cls, controls = false) {
   if (!controls && !prefersReducedMotion) video.autoplay = true;
   if (item.poster) video.poster = safeLink(item.poster);
   const source = document.createElement('source');
-  source.src = safeLink(item.media);
   source.type = item.media.toLowerCase().split('?')[0].endsWith('.webm') ? 'video/webm' : 'video/mp4';
   video.append(source);
+  resolveMedia(item.media).then(url => {
+    source.src = url;
+    video.load();
+    if (video.isConnected && !prefersReducedMotion && (controls || video.autoplay)) {
+      video.play().catch(() => {});
+    }
+  }).catch(err => {
+    video.dataset.error = 'true';
+    video.setAttribute('aria-label', `Preview unavailable: ${item.title}`);
+    console.warn('Gallery video could not load', item.title, err);
+  });
   return video;
 }
 function expandIcon() {
