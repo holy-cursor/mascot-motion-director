@@ -60,7 +60,7 @@
     "subtitle": "SideShift · nose-first page flyover",
     "category": "Brand",
     "creator": "Original showcase",
-    "media": "./media/sideshift-paper-plane-flight.mp4",
+    "media": "./media/sideshift-paper-plane-flight.mp4.b64",
     "poster": "./media/sideshift-paper-plane-poster.svg",
     "description": "SideShift paper plane flies nose-first across the webpage on a smooth curved flight path.",
     "featured": false
@@ -71,7 +71,7 @@
     "subtitle": "Two-loop symbol · logo reveal",
     "category": "Brand",
     "creator": "Original showcase",
-    "media": "./media/interlocking-loop-reveal.mp4",
+    "media": "./media/interlocking-loop-reveal.mp4.b64",
     "poster": "./media/interlocking-loop-poster.svg",
     "description": "The interlocking symbol reveals its two curves before settling into the original mark.",
     "featured": false
