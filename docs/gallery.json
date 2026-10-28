@@ -53,5 +53,27 @@
     "poster": "./media/qfex-logo-reveal-poster.svg",
     "description": "A geometric teal-and-white mark assembles from a three-quarter circular stroke and two precise square modules. A clean vector animation designed around the original logo's construction.",
     "featured": false
+  },
+  {
+    "id": "sideshift-paper-plane-flight",
+    "title": "Paper Plane Flight",
+    "subtitle": "SideShift · nose-first page flyover",
+    "category": "Brand",
+    "creator": "Original showcase",
+    "media": "./media/sideshift-paper-plane-flight.mp4",
+    "poster": "./media/sideshift-paper-plane-poster.svg",
+    "description": "SideShift paper plane flies nose-first across the webpage on a smooth curved flight path.",
+    "featured": false
+  },
+  {
+    "id": "interlocking-loop-logo",
+    "title": "Interlocking Loop",
+    "subtitle": "Two-loop symbol · logo reveal",
+    "category": "Brand",
+    "creator": "Original showcase",
+    "media": "./media/interlocking-loop-reveal.mp4",
+    "poster": "./media/interlocking-loop-poster.svg",
+    "description": "The interlocking symbol reveals its two curves before settling into the original mark.",
+    "featured": false
   }
 ]
