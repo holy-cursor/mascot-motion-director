@@ -20,28 +20,24 @@
 body {
   isolation: isolate;
   color: var(--saint-ink);
-  background:
-    radial-gradient(ellipse 50% 22% at 82% 11%, rgba(239,75,46,.12),transparent 82%),
-    radial-gradient(ellipse 55% 28% at 7% 60%, rgba(255,183,64,.10),transparent 82%),
-    radial-gradient(ellipse 50% 25% at 94% 90%, rgba(255,135,57,.10),transparent 82%),
-    #fffdfa;
+  background: #fffdfa;
 }
 button:focus-visible,a:focus-visible,input:focus-visible,
 textarea:focus-visible,select:focus-visible {outline-color:var(--saint-red)}
-.ambient { z-index:0; filter:blur(92px); opacity:.58; }
+.ambient { display:none; }
 .ambient-a {
-  background:radial-gradient(circle at 50% 48%,rgba(249,71,47,.54),rgba(255,178,60,.30) 48%,transparent 72%);
+  background:none;
   width:650px;height:620px;top:-370px;right:-60px;
 }
 .ambient-b {
-  background:radial-gradient(circle at center,rgba(255,178,53,.48),rgba(246,74,45,.23) 56%,transparent 76%);
+  background:none;
   width:640px;height:590px;top:990px;left:-350px;
 }
 .header,main,.footer {position:relative;z-index:1}
 .header {border-bottom:1px solid rgba(80,39,24,.11)}
 .brand {color:var(--saint-ink)}
 .brand-mark {
-  background:linear-gradient(145deg,#c72f26 0%,#f06435 57%,#ffb35a 100%);
+  background:#c93026;
   color:white;border-radius:12px;
   box-shadow:0 7px 18px rgba(216,71,35,.17);
 }
@@ -51,12 +47,12 @@ textarea:focus-visible,select:focus-visible {outline-color:var(--saint-red)}
 .nav a:hover,.footer-links a:hover {color:var(--saint-red)}
 .btn {box-shadow:none}
 .btn-accent {
-  background:linear-gradient(105deg,#c82b23,#dc5028);
+  background:#c93026;
   color:#fff;
   box-shadow:0 10px 24px rgba(207,64,37,.17);
 }
 .btn-accent:hover {
-  background:linear-gradient(105deg,#ad241d,#cb3e24);
+  background:#ad241d;
   box-shadow:0 13px 26px rgba(207,64,37,.23);
 }
 .btn-outline {border-color:#d8c6bc;background:rgba(255,255,255,.56);color:var(--saint-ink)}
@@ -69,9 +65,8 @@ textarea:focus-visible,select:focus-visible {outline-color:var(--saint-red)}
 .hero h1,.section-top h2,.process-head h2,.submit-left h2 {color:var(--saint-ink)}
 .hero h1 em,.process-head h2 em,.submit-left h2 em {
   color:var(--saint-red);
-  background:linear-gradient(100deg,#bc2824 4%,#f35c2e 58%,#ee983b 100%);
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;
+  background:none;
+  -webkit-text-fill-color:var(--saint-red);
 }
 .period,.section-top h2 span {color:var(--saint-red)}
 .hero-copy>p {color:var(--saint-body)}
@@ -83,7 +78,7 @@ textarea:focus-visible,select:focus-visible {outline-color:var(--saint-red)}
   border:1px solid rgba(118,61,43,.10);
 }
 .ticker-wrap {
-  background:linear-gradient(90deg,#ffcc76 0%,#ff9864 42%,#fa7a56 76%,#ffbd65 100%);
+  background:#ffc76c;
   color:#241917;
   border-block:1px solid rgba(161,65,34,.10);
 }
@@ -122,12 +117,7 @@ textarea:focus-visible,select:focus-visible {outline-color:var(--saint-red)}
 .gallery-tail {border-top-color:#e7d8cf}
 .gallery-tail p {color:#75665f}
 .gallery-tail strong {color:var(--saint-ink)}
-.process-section {
-  border-block:1px solid #f2ded2;
-  background:
-   radial-gradient(ellipse at 80% 3%,rgba(246,118,60,.11),transparent 50%),
-   linear-gradient(180deg,#fff5ef 0%,#fffaf6 100%);
-}
+.process-section { border-block:1px solid #f2ded2; background:#fff7f0; }
 .process-head>p {color:var(--saint-body)}
 .steps article {background:#fff;border:1px solid #ebd9cd;box-shadow:0 8px 25px rgba(126,69,40,.035)}
 .step-number {color:#a66d58}
@@ -168,3 +158,13 @@ textarea:focus-visible,select:focus-visible {outline-color:var(--saint-red)}
 @media(max-width:430px) {
   .gallery-count {border-top-color:#e6d3c8}
 }
+
+/* Flat brand finishes, no gradient overlays on the website */
+.ambient,.ambient-a,.ambient-b {display:none!important;background:none!important}
+body {background:#fffdfa!important}
+.hero h1 em,.process-head h2 em,.submit-left h2 em {background:none!important;-webkit-text-fill-color:#c93026!important;color:#c93026!important}
+.brand-mark,.btn-accent {background:#c93026!important}
+.btn-accent:hover {background:#ad241d!important}
+.ticker-wrap {background:#ffc76c!important}
+.process-section {background:#fff7f0!important}
+.work-media-shade {background:none!important}
